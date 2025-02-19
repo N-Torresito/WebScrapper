@@ -1,15 +1,19 @@
 package openuse.nt;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.*;
 
-public class Manejador {
-   List<Precios> productos;
+public class Manejador implements Serializable {
+   List<Precios> preciosProductos;
+   @Serial
+   private static final long serialVersionUID = 1L;
 
    public Manejador() {
-       productos = new ArrayList<>();
+       preciosProductos = new ArrayList<>();
    }
 
    public void agregarProducto(Precios producto) {
-       productos.add(producto);
+       preciosProductos.add(producto);
    }
 
    public void agregarProducto(String nombreProducto) {
@@ -20,7 +24,8 @@ public class Manejador {
        //TODO: Implementar
     }
 
-    public void eliminarProducto(Precios producto) {
-         productos.remove(producto);
+
+    public void eliminarProductoObjeto(Precios producto) {
+         preciosProductos.remove(producto);
     }
 }

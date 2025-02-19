@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * Clase que representa los precios de un producto de diferentes proveedores en un solo objeto
+ * Clase que representa los precios de un mismo producto de diferentes proveedores en un solo objeto
  */
 public class Precios implements Serializable {
     private String nombreProducto;
@@ -27,7 +27,7 @@ public class Precios implements Serializable {
             throw new PreciosExc("El nombre del producto no puede ser nulo o vacío");
         }
         this.nombreProducto = nombreProducto;
-        objetivos = new ArrayList<>();
+        objetivos = new ArrayList<Objetivo>();
     }
 
     /**
@@ -48,8 +48,16 @@ public class Precios implements Serializable {
         objetivos.add(objetivo);
     }
 
-    public void agregarObjetivo(double precio, String nombreProveedor) throws ObjetivoExc {
-        objetivos.add(new Objetivo(precio, nombreProveedor, nombreProducto));
+    /**
+     * Agrega un objetivo a la lista de objetivos con parametros individuales
+     * @param precio
+     * @param nombreProveedor
+     * @param nombreProducto
+     * @param urlProducto
+     * @throws ObjetivoExc
+     */
+    public void agregarObjetivo(double precio, String nombreProveedor, String nombreProducto, String urlProducto) throws ObjetivoExc {
+        objetivos.add(new Objetivo(precio, nombreProveedor, nombreProducto, urlProducto));
     }
 
     /**
