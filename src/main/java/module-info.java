@@ -1,9 +1,11 @@
-module  openuse.fx{
+module  openuse{
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
     requires org.jsoup;
 
-    opens openuse.fx to javafx.fxml;
-    exports openuse.fx;
+    opens openuse.pantallas to javafx.fxml;
+    exports openuse.pantallas;
+    exports openuse;
+    opens openuse to javafx.fxml;
 }

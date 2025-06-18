@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="493.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="openuse.pantallas.TestController">
+    <children>
+        <Button fx:id="testbtn" layoutX="120.0" layoutY="206.0" mnemonicParsing="false" onAction="#onClickPrueba" text="Probar" />
+        <Label fx:id="infolabel" layoutX="257.0" layoutY="172.0" prefHeight="94.0" prefWidth="201.0" />
+        <TextField fx:id="urltxt" layoutX="72.0" layoutY="56.0" promptText="URL" />
+        <TextField fx:id="normalHTMLtxt" layoutX="72.0" layoutY="107.0" promptText="HTML Normal" />
+        <TextField fx:id="discounttxt" layoutX="72.0" layoutY="155.0" promptText="HTML Descuento" />
+      <TextField fx:id="nombrefuentetxt" layoutX="283.0" layoutY="101.0" promptText="Nombre" />
+      <Button fx:id="guardarfuentesbtn" layoutX="289.0" layoutY="143.0" mnemonicParsing="false" onAction="#onClickGuardar" text="Guardar" />
+      <Label layoutX="146.0" layoutY="14.0" text="PRUEBA Y GUARDADO DE FUENTES">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="fuentescmbx" layoutX="283.0" layoutY="56.0" prefWidth="150.0" />
+      <Button fx:id="btnModificar" layoutX="358.0" layoutY="143.0" mnemonicParsing="false" onAction="#onClickEliminarFuentes" text="Eliminar" />
+    </children>
+</Pane>
