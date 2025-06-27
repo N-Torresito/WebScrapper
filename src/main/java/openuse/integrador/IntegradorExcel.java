@@ -2,7 +2,12 @@ package openuse.integrador;
 //import org.apache
 
 
-public class IntegradorExcel {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class IntegradorExcel implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     //TODO
 

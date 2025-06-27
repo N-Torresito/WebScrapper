@@ -4,34 +4,52 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="openuse.pantallas.ScrapperController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="openuse.pantallas.ScrapperController">
     <children>
-        <ComboBox fx:id="fuentesComboBox" layoutX="505.0" layoutY="54.0" prefWidth="150.0" />
-        <ListView fx:id="preciosListView" layoutX="269.0" layoutY="54.0" prefHeight="229.0" prefWidth="200.0" />
-        <ListView fx:id="productosListView" layoutX="39.0" layoutY="54.0" onMouseClicked="#onClickListViewActualizarPrecios" prefHeight="229.0" prefWidth="200.0" />
-        <Label layoutX="345.0" layoutY="33.0" text="Precios">
+        <ComboBox fx:id="fuentesComboBox" layoutX="505.0" layoutY="74.0" prefWidth="150.0" />
+        <ListView fx:id="preciosListView" layoutX="269.0" layoutY="74.0" prefHeight="229.0" prefWidth="200.0" />
+        <ListView fx:id="productosListView" layoutX="39.0" layoutY="74.0" onMouseClicked="#onClickListViewActualizarPrecios" prefHeight="229.0" prefWidth="200.0" />
+        <Label layoutX="345.0" layoutY="53.0" text="Precios">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <Label layoutX="106.0" layoutY="33.0" text="Productos">
+        <Label layoutX="106.0" layoutY="53.0" text="Productos">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <Label layoutX="554.0" layoutY="33.0" text="Fuentes">
+        <Label layoutX="554.0" layoutY="53.0" text="Fuentes">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <Button fx:id="administrarFuentesBtn" layoutX="519.0" layoutY="391.0" mnemonicParsing="false" onAction="#onClickAdministrarFuentes" text="Administrar Fuentes" />
-        <TextField fx:id="urltxt" layoutX="505.0" layoutY="117.0" promptText="URL/LINK" />
-        <Button fx:id="agregarPrecioBtn" layoutX="532.0" layoutY="156.0" mnemonicParsing="false" onAction="#onClickAgregarPrecio" text="Agregar Precio" />
-        <Button fx:id="eliminarPrecioBtn" layoutX="532.0" layoutY="189.0" mnemonicParsing="false" onAction="#onClickEliminarPrecio" text="Eliminar Precio" />
-        <Button fx:id="agregarProductoBtn" layoutX="139.0" layoutY="392.0" mnemonicParsing="false" onAction="#onClickAgregarProducto" text="Agregar Producto" />
-        <Button fx:id="eliminarProductoBtn" layoutX="278.0" layoutY="392.0" mnemonicParsing="false" onAction="#onClickEliminarProducto" text="Eliminar Producto" />
-        <TextField fx:id="nombreProductoTxt" layoutX="184.0" layoutY="308.0" promptText="Nombre" />
-        <TextField fx:id="marcaProductoTxt" layoutX="184.0" layoutY="347.0" promptText="Marca" />
-      <Label fx:id="infoTxt" layoutX="490.0" layoutY="255.0" prefHeight="105.0" prefWidth="181.0" />
+        <Button fx:id="administrarFuentesBtn" layoutX="519.0" layoutY="411.0" mnemonicParsing="false" onAction="#onClickAdministrarFuentes" text="Administrar Fuentes" />
+        <TextField fx:id="urltxt" layoutX="505.0" layoutY="137.0" promptText="URL/LINK" />
+        <Button fx:id="agregarPrecioBtn" layoutX="532.0" layoutY="176.0" mnemonicParsing="false" onAction="#onClickAgregarPrecio" text="Agregar Precio" />
+        <Button fx:id="eliminarPrecioBtn" layoutX="532.0" layoutY="209.0" mnemonicParsing="false" onAction="#onClickEliminarPrecio" text="Eliminar Precio" />
+        <Button fx:id="agregarProductoBtn" layoutX="19.0" layoutY="412.0" mnemonicParsing="false" onAction="#onClickAgregarProducto" text="Agregar Producto" />
+        <Button fx:id="eliminarProductoBtn" layoutX="158.0" layoutY="412.0" mnemonicParsing="false" onAction="#onClickEliminarProducto" text="Eliminar Producto" />
+        <TextField fx:id="nombreProductoTxt" layoutX="64.0" layoutY="328.0" promptText="Nombre" />
+        <TextField fx:id="marcaProductoTxt" layoutX="64.0" layoutY="367.0" promptText="Marca" />
+        <Label fx:id="infoTxt" layoutX="490.0" layoutY="275.0" prefHeight="105.0" prefWidth="181.0" />
+        <Button fx:id="probarBtn" layoutX="343.0" layoutY="328.0" mnemonicParsing="false" onAction="#onClickProbarProducto" text="Probar" />
+        <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="693.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                    <items>
+                        <MenuItem fx:id="menuArchivoGuardar" mnemonicParsing="false" onAction="#onClickArchivoGuardar" text="Guardar" />
+                        <MenuItem fx:id="menuArchivoAbrir" mnemonicParsing="false" onAction="#onClickArchivoAbrir" text="Abrir" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Exportar">
+                    <items>
+                        <MenuItem fx:id="menuExportarExcel" mnemonicParsing="false" onAction="#onClickExportarExcel" text="Excel" />
+                        <MenuItem fx:id="menuExportarCSV" mnemonicParsing="false" onAction="#onClickExportarCSV" text="csv" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+      <ProgressIndicator fx:id="estadoProgressIndicator" layoutX="554.0" layoutY="301.0" opacity="0.0" />
     </children>
 </Pane>

@@ -15,8 +15,6 @@
         <junit.version>5.10.2</junit.version>
     </properties>
 
-
-
     <!-- Cositas JavaFX -->
     <build>
         <plugins>
@@ -38,7 +36,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>openuse.fx/openuse.Fx_main</mainClass>
+                            <mainClass>openuse.Fx_main</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
@@ -68,7 +66,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>17.0.6</version>
+            <version>17.0.12</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>

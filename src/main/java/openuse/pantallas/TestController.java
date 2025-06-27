@@ -5,7 +5,7 @@ import javafx.scene.control.*;
 import javafx.util.Pair;
 import openuse.dominio.Fuente;
 import openuse.integrador.IntegradorScrapper;
-import openuse.negocios.NegocioPrincipal;
+import openuse.negocios.Negocio;
 import java.io.IOException;
 
 
@@ -27,7 +27,7 @@ public class TestController {
     @javafx.fxml.FXML
     private Button guardarfuentesbtn;
 
-    private NegocioPrincipal negocio;
+    private Negocio negocio;
     private IntegradorScrapper scrapper;
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
     @javafx.fxml.FXML
@@ -132,11 +132,11 @@ public class TestController {
         }
     }
 
-    public NegocioPrincipal getNegocio() {
+    public Negocio getNegocio() {
         return negocio;
     }
 
-    public void setNegocio(NegocioPrincipal negocio) {
+    public void setNegocio(Negocio negocio) {
         this.negocio = negocio;
         scrapper = negocio.getScrapper();
         actualizarFuentesCMB();

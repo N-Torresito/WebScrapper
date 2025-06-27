@@ -3,19 +3,23 @@ package openuse.negocios;
 import openuse.dominio.Fuente;
 import openuse.dominio.Precio;
 import openuse.dominio.Producto;
+import openuse.integrador.IntegradorArchivos;
 import openuse.integrador.IntegradorExcel;
 import openuse.integrador.IntegradorScrapper;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 
-public class NegocioPrincipal implements Serializable {
+public class Negocio implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     ArrayList<Producto> productos;
     ArrayList<Fuente> fuentes;
     IntegradorScrapper scrapper = new IntegradorScrapper();
     IntegradorExcel excel = new IntegradorExcel();
+    IntegradorArchivos archivos = new IntegradorArchivos();
 
-    public NegocioPrincipal() {
+    public Negocio() {
         productos = new ArrayList<Producto>();
         fuentes = new ArrayList<Fuente>();
     }
@@ -63,6 +67,15 @@ public class NegocioPrincipal implements Serializable {
         originalDTO.setName(fuenteDTO.getName());
     }
 
+    public void guardarArchivo(File file, Negocio negocio){
+        archivos.guardarNegocio(file, negocio);
+    }
+
+    //-------//
+    //Getter & Setters
+
+    public Negocio  leerArchivo(File file) throws IOException { return archivos.leerNegocio(file);}
+
     public ArrayList<Producto> getProductos() {
         return productos;
     }
@@ -77,6 +90,14 @@ public class NegocioPrincipal implements Serializable {
 
     public void setFuentes(ArrayList<Fuente> fuentes) {
         this.fuentes = fuentes;
+    }
+
+    public IntegradorArchivos getArchivos() {
+        return archivos;
+    }
+
+    public void setArchivos(IntegradorArchivos archivos) {
+        this.archivos = archivos;
     }
 
     public IntegradorScrapper getScrapper() {

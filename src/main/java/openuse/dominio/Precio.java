@@ -1,8 +1,11 @@
 package openuse.dominio;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class Precio implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     private String URL;
     private Fuente fuente;
 
