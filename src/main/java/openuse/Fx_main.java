@@ -33,6 +33,7 @@ public class Fx_main extends Application {
                 }
             });
             event.consume();
+            System.out.println("Wiwiw");
         });
     }
 
