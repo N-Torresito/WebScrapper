@@ -30,7 +30,6 @@ public class Fx_main extends Application {
                     System.exit(0);
                 } else {
                     event.consume();
-                    System.out.println("hola");
                 }
             });
             event.consume();
